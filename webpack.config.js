@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
     entry: './index.js',
@@ -7,6 +8,9 @@ module.exports = {
         filename: 'index.js',
         libraryTarget: 'commonjs'
     },
+    plugins: [
+        new webpack.DefinePlugin({ "global.GENTLY": false })
+    ],
     target: 'node',
     mode: 'production'
 }
